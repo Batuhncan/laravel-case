@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locations', function (Blueprint $table) {
+         Schema::create('locations', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // Konumun adı
+            $table->decimal('latitude', 10, 7); // Enlem
+            $table->decimal('longitude', 10, 7); // Boylam
+            $table->string('marker_color', 7); // Örnek: #FF5733
             $table->timestamps();
         });
     }
