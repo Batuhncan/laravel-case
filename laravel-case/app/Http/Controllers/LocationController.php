@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use Illuminate\Http\Request;
+use App\Http\Requests\LocationCheckValidate;
 
 class LocationController extends Controller
 {
@@ -49,7 +50,7 @@ class LocationController extends Controller
         return response()->json($location);
     }
 
-    // Rotalama: En yakın noktaya göre sıralama
+    // Rotalama: Gönderilen konuma en yakın lokasyonları listeler
     public function route(Request $request)
     {
         $request->validate([
